@@ -3,15 +3,15 @@ import '../styles/thankslinks.css';
 
 export default function ThanksLinks() {
   return (
-    <div className="container">
-      <div className="half">
+    <div className="flex-container">
+      <div className="flex-child half">
                   <h1>Thanks</h1>
                   <p>Enfo is a Nordic IT service company enabling its customers’
                       data-driven business transformation. We are over 900 niched experts
                       working for a more intelligent world, with technology empowering
                       people, businesses and societies.</p>
       </div>
-      <div className="half">
+      <div className="flex-child half">
           <div>
               <h3>Links</h3>
               <p><a href="#">Contact us</a></p>
