@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react';
+import '../styles/table.css';
 
 export default function Table() {
 
@@ -44,7 +45,7 @@ export default function Table() {
 
   return (
     <div className="list">
-                <table>
+                <table id="employees-table">
                     <thead>
                         <tr>
                             <th className="sort" data-sort="firstname" onClick={() => sorting("firstname")}>Firstname</th>
