@@ -18,14 +18,37 @@ export default function Table() {
   }, [])
 
   //add sorting functionality when clicking headers (firstname + lastname)
+  function sorting(col) {
+    //ascending (first click)
+    if (isAscending) {
+
+      const sorted = [...employeesList].sort((a, b) => {
+        return (
+          a[col].toLowerCase() > b[col].toLowerCase() ? 1 : -1
+        )
+      });
+      setEmployeesList(sorted);
+      setIsAscending(false);
+    }
+    //if descending (second click)
+    if (!isAscending) {
+      const sorted = [...employeesList].sort((a, b) => {
+        return (
+          a[col].toLowerCase() < b[col].toLowerCase() ? 1 : -1
+        )
+      });
+      setEmployeesList(sorted);
+      setIsAscending(true);
+    }
+  }
 
   return (
-    <div class="list">
+    <div className="list">
                 <table>
                     <thead>
                         <tr>
-                            <th class="sort" data-sort="firstname">Firstname</th>
-                            <th class="sort" data-sort="lastname">Lastname</th>
+                            <th className="sort" data-sort="firstname" onClick={() => sorting("firstname")}>Firstname</th>
+                            <th className="sort" data-sort="lastname" onClick={() => sorting("lastname")}>Lastname</th>
                             <th>Role</th>
                             <th>Email</th>
                             <th>Phone</th>
