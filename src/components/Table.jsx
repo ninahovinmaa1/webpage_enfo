@@ -60,9 +60,9 @@ export default function Table() {
                           <tr key={index}>
                             <td>{person.firstname}</td>
                             <td>{person.lastname}</td>
+                            <td>{person.role}</td>
                             <td>{person.email}</td>
                             <td>{person.phone}</td>
-                            <td>{person.role}</td>
                           </tr>
                         )
                       })}
